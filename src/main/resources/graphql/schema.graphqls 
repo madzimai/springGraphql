@@ -1,0 +1,15 @@
+    type Query{
+        articleById(id:ID): Article
+    }
+
+    type Article{
+        id:ID!
+        title: String!
+        wordCount: Int!
+        author: Author!
+    }
+    type Author {
+        id:ID!
+        firstname: String!
+        lastname: String!
+    }
