@@ -14,9 +14,9 @@ public record  Article ( String id, String title, int wordCount, String authorId
 
     public static Article getById(String id) {
         return articles.stream()
-                .filter(article -> Boolean.parseBoolean(article.id()))
+                .filter(article -> article.id().equals(id))
                 .findFirst()
                 .orElse(null);
-
     }
+
 }
