@@ -10,12 +10,12 @@ public record Author(String id, String firstName, String lastName) {
      new Author("author-2", "Douglas", "Adams"),
     new Author("author-3", "Bill", "Bryson")
     );
-    public static List<Author> getById( String id) {
-        return Collections.singletonList(authors.stream()
-                .filter(author -> Boolean.parseBoolean(author.id()))
+    public static Author getById(String id) {
+        return authors.stream()
+                .filter(author -> author.id().equals(id))
                 .findFirst()
-                .orElse(null));
-
+                .orElse(null);
     }
+
 
 }
